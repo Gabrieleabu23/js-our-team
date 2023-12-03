@@ -55,6 +55,7 @@ const team =[
 // }
 // BONUS 1
 let i =0;
+
 for(let chiave in team){
     const newElement= document.createElement("div");
     
@@ -65,8 +66,25 @@ for(let chiave in team){
     newElement.append( ` ${"/\t/ "} ${team[chiave].role}`);
     newElement.append( ` ${"/\t/ Ruolo:"} ${team[chiave].role}`);
     const image= document.createElement("img");
-    image.classList.add("image");
-    image.src= `${team[chiave].image}`;
-    newElement.append(image);
-    document.getElementById("boh").append(newElement);
+    image.src= team[chiave].image;
+    const card= document.createElement("div");
+    card.classList.add("card");
+    card.style.width="18rem";
+
+    const cardText= document.createElement("div");
+    cardText.classList.add("card-body","text-center");
+    const text= document.createElement("h5");
+    text.append(`${team[chiave].name}`);
+    const paragraph= document.createElement("p");
+    paragraph.append(`${team[chiave].role}`);
+    cardText.append(text,paragraph)
+    card.append(image);
+    card.append(cardText);
+    const giffList = document.getElementsByClassName("col-auto");
+    const col= document.createElement("div");
+    col.classList.add("col-3");
+    col.append(card);
+    document.getElementById("boh").append(col);
+
+    // document.getElementById("boh").append(newElement);
 }
