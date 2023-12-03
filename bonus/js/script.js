@@ -53,3 +53,20 @@ const team =[
 //     newElement.append( `${"/\t/ immagine: "} ${team[chiave].image}`);
 //     document.getElementById("boh").append(newElement);
 // }
+// BONUS 1
+let i =0;
+for(let chiave in team){
+    const newElement= document.createElement("div");
+    
+    // INCREMENTO CONTATORE PER VISUALIZZARE LA STAMPA DEI DATI PARTENDO DA 1
+    i++;
+    // newElement.append( chiave,team[chiave].name);
+    newElement.append(`${i} ${team[chiave].name}`) ;
+    newElement.append( ` ${"/\t/ "} ${team[chiave].role}`);
+    newElement.append( ` ${"/\t/ Ruolo:"} ${team[chiave].role}`);
+    const image= document.createElement("img");
+    image.classList.add("image");
+    image.src= `${team[chiave].image}`;
+    newElement.append(image);
+    document.getElementById("boh").append(newElement);
+}
