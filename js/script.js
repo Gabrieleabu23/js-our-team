@@ -53,8 +53,8 @@ const team =[
 //     newElement.append( `${"/\t/ immagine: "} ${team[chiave].image}`);
 //     document.getElementById("boh").append(newElement);
 // }
-const image= document.getElementById("image");
-// image.classList.add("d-none");
+
+// BONUS 1
 let i =0;
 for(let chiave in team){
     const newElement= document.createElement("div");
