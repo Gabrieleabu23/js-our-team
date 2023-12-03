@@ -4,32 +4,32 @@ const team =[
     {
         "name": "Wayne Barret",
         "role": "Founder & CEO",
-        "image": "wayne-barnett-founder-ceo.jpg"
+        "image": "img/wayne-barnett-founder-ceo.jpg"
     },
     {
         "name": "Angela Caroll",
         "role": "Chief Editor",
-        "image": "angela-caroll-chief-editor.jpg"
+        "image": "img/angela-caroll-chief-editor.jpg"
     },
     {
         "name": "Walter Gordon",
         "role": "Office Manager",
-        "image": "walter-gordon-office-manager.jpg"
+        "image": "img/walter-gordon-office-manager.jpg"
     },
     {
         "name": "Angela Lopez",
         "role": "Social Media Manager",
-        "image": "angela-lopez-social-media-manager.jpg"
+        "image": "img/angela-lopez-social-media-manager.jpg"
     },
     {
         "name": "Scott Estrada",
         "role": "Developer",
-        "image": "scott-estrada-developer.jpg"
+        "image": "img/scott-estrada-developer.jpg"
     },
     {
         "name": "Barbara Ramos",
         "role": "Graphic Designer",
-        "image": "barbara-ramos-graphic-designer.jpg"
+        "image": "img/barbara-ramos-graphic-designer.jpg"
         },
 ]
 ;
@@ -41,15 +41,33 @@ const team =[
 // MILESTONE 2
 
 // VARIABILE PER STAMPARE I DATI PARTENDO DA 1 INVECE DA 0
+// let i =0;
+// for(let chiave in team){
+//     const newElement= document.createElement("div");
+//     // INCREMENTO CONTATORE PER VISUALIZZARE LA STAMPA DEI DATI PARTENDO DA 1
+//     i++;
+//     // newElement.append( chiave,team[chiave].name);
+//     newElement.append(`${i} ${team[chiave].name}`) ;
+//     newElement.append( ` ${"/\t/ "} ${team[chiave].role}`);
+//     newElement.append( ` ${"/\t/ Ruolo:"} ${team[chiave].role}`);
+//     newElement.append( `${"/\t/ immagine: "} ${team[chiave].image}`);
+//     document.getElementById("boh").append(newElement);
+// }
+const image= document.getElementById("image");
+// image.classList.add("d-none");
 let i =0;
 for(let chiave in team){
     const newElement= document.createElement("div");
+    
     // INCREMENTO CONTATORE PER VISUALIZZARE LA STAMPA DEI DATI PARTENDO DA 1
     i++;
     // newElement.append( chiave,team[chiave].name);
     newElement.append(`${i} ${team[chiave].name}`) ;
     newElement.append( ` ${"/\t/ "} ${team[chiave].role}`);
     newElement.append( ` ${"/\t/ Ruolo:"} ${team[chiave].role}`);
-    newElement.append( `${"/\t/ immagine: "} ${team[chiave].image}`);
+    const image= document.createElement("img");
+    image.classList.add("image");
+    image.src= `${team[chiave].image}`;
+    newElement.append(image);
     document.getElementById("boh").append(newElement);
 }
