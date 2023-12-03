@@ -1,4 +1,4 @@
-
+//  MILESTONE 0 & 1
 const team =[
     
     {
@@ -33,7 +33,23 @@ const team =[
         },
 ]
 ;
+// CONSOLE LOG MILESTONE 1
+// for (let chiave in team){
+//     console.log(chiave , team[chiave]);
+// }
 
+// MILESTONE 2
+
+// VARIABILE PER STAMPARE I DATI PARTENDO DA 1 INVECE DA 0
+let i =0;
 for(let chiave in team){
-    console.log(chiave , team[chiave]);
+    const newElement= document.createElement("div");
+    // INCREMENTO CONTATORE PER VISUALIZZARE LA STAMPA DEI DATI PARTENDO DA 1
+    i++;
+    // newElement.append( chiave,team[chiave].name);
+    newElement.append(`${i} ${team[chiave].name}`) ;
+    newElement.append( ` ${"/\t/ "} ${team[chiave].role}`);
+    newElement.append( ` ${"/\t/ Ruolo:"} ${team[chiave].role}`);
+    newElement.append( `${"/\t/ immagine: "} ${team[chiave].image}`);
+    document.getElementById("boh").append(newElement);
 }
